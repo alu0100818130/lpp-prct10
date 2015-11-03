@@ -3,8 +3,8 @@ require 'my_gem/bibliog'
 
 describe Bibliografia do
     before :each do
-        @prueba1 = Bibliografia.new(['Dave Thomas', 'Andy Hunt', 'Chad Fowler'],'Programming Ruby 1.9 & 2.0: The Pragmatic Programmers Guide','Pragmatic Bookshelf',2)
-        @prueba2 = Bibliografia.new(['Dave Thomas', 'Andy Hunt', 'Chad Fowler'],'Programming Ruby 1.9 & 2.0: The Pragmatic Programmers Guide','Pragmatic Bookshelf',4, 'The Facets of Ruby')
+        @prueba1 = Bibliografia.new(['Dave Thomas', 'Andy Hunt', 'Chad Fowler'],'Programming Ruby 1.9 & 2.0: The Pragmatic Programmers Guide','Pragmatic Bookshelf',2,'July 3, 2010')
+        @prueba2 = Bibliografia.new(['Dave Thomas', 'Andy Hunt', 'Chad Fowler'],'Programming Ruby 1.9 & 2.0: The Pragmatic Programmers Guide','Pragmatic Bookshelf',4,'July 7, 2013', 'The Facets of Ruby')
     end
     
     describe "Almacenado datos" do
@@ -25,6 +25,10 @@ describe Bibliografia do
       it "Deben tener un numero de edicion" do
         @prueba2.edicion.should eq(4)
         @prueba1.edicion.should eq(2)
+    end
+    it "Debe tener una fecha de publicacion" do
+        @prueba2.fdp.should eq('July 7, 2013')
+        @prueba1.fdp.should eq('July 3, 2010')
     end
   end
 end
