@@ -38,11 +38,26 @@ describe Bibliografia do
   
   describe "Metodos" do
       
-    it "Existe un metodo para obtener el listado de autores" do 
-         @prueba2.autores.should == (['Dave Thomas', 'Andy Hunt', 'Chad Fowler'])
+    it "Existe un metodo para obtener el listado de autores." do 
+         @prueba2.obtenerautores.should == (['Dave Thomas', 'Andy Hunt', 'Chad Fowler'])
      end
      it "Existe un metodo para obtener el titulo." do 
-         @prueba2.titulo.should == ('Programming Ruby 1.9 & 2.0: The Pragmatic Programmers Guide')
+         @prueba2.obtenertitulo.should == ('Programming Ruby 1.9 & 2.0: The Pragmatic Programmers Guide')
+     end
+     it "Existe un metodo para obtener la serie." do 
+         @prueba2.obtenerserie.should == ('The Facets of Ruby')
+     end
+     it "Existe un metodo para obtener la editorial." do 
+         @prueba2.obtenereditorial.should == ('Pragmatic Bookshelf')
+     end
+     it "Existe un metodo para obtener el numero de edicion." do 
+         @prueba2.obteneredicion.should == (4)
+     end
+     it "Existe un metodo para obtener la fecha de publicacion." do 
+         @prueba2.obtenerfdp.should == ('July 7, 2013')
+     end
+     it "Existe un metodo para obtener el ISBN." do 
+         @prueba2.obtenerisbn.should == (['ISBN-13: 978-1937785499', 'ISBN-10: 1937785491'])
      end
   end
   

@@ -10,4 +10,32 @@ class Bibliografia
          @serie=c
     end
     
+    def obtenerautores
+     @autores
+    end
+    
+    def obtenertitulo
+     @titulo
+    end
+    
+    def obtenerserie
+     @serie
+    end
+    
+    def obtenereditorial
+     @editorial
+    end
+    
+    def obteneredicion
+     @edicion
+    end
+    
+    def obtenerfdp
+     @fdp
+    end
+    
+    def obtenerisbn
+     @isbn
+    end
+    
 end
