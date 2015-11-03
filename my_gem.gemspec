@@ -15,7 +15,7 @@ Gem::Specification.new do |spec|
 
   spec.summary       = %q{Mi gema personal para la practica 6}
   spec.description   = %q{Mi gema a desarrollar para la practica 6 de lenguajes y paradigmas de la programacion}
-  spec.homepage      = "www.rae.es/"
+  spec.homepage      = ""
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(test|spec|features)/}) }
@@ -25,5 +25,5 @@ Gem::Specification.new do |spec|
 
   spec.add_development_dependency "bundler", "~> 1.8"
   spec.add_development_dependency "rake", "~> 10.0"
-  gem.add_development_dependency 'rspec', '~>2.11'
+  spec.add_development_dependency "rspec", "~>2.11"
 end
