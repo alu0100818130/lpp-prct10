@@ -3,8 +3,8 @@ require 'my_gem/bibliog'
 
 describe Bibliografia do
     before :each do
-        @prueba1 = Bibliografia.new(['Dave Thomas', 'Andy Hunt', 'Chad Fowler'],'Programming Ruby 1.9 & 2.0: The Pragmatic Programmers Guide','Pragmatic Bookshelf',2,'July 3, 2010')
-        @prueba2 = Bibliografia.new(['Dave Thomas', 'Andy Hunt', 'Chad Fowler'],'Programming Ruby 1.9 & 2.0: The Pragmatic Programmers Guide','Pragmatic Bookshelf',4,'July 7, 2013', 'The Facets of Ruby')
+        @prueba1 = Bibliografia.new(['Dave Thomas', 'Andy Hunt', 'Chad Fowler'],'Programming Ruby 1.9 & 2.0: The Pragmatic Programmers Guide','Pragmatic Bookshelf',2,'July 3, 2010', ['ISBN-13: 978-1937785444', 'ISBN-10: 1937785221'])
+        @prueba2 = Bibliografia.new(['Dave Thomas', 'Andy Hunt', 'Chad Fowler'],'Programming Ruby 1.9 & 2.0: The Pragmatic Programmers Guide','Pragmatic Bookshelf',4,'July 7, 2013',['ISBN-13: 978-1937785499', 'ISBN-10: 1937785491'], 'The Facets of Ruby')
     end
     
     describe "Almacenado datos" do
@@ -30,6 +30,21 @@ describe Bibliografia do
         @prueba2.fdp.should eq('July 7, 2013')
         @prueba1.fdp.should eq('July 3, 2010')
     end
+    it "Debe existir uno o mas numeros ISBN" do
+        @prueba2.isbn.should eq(['ISBN-13: 978-1937785499', 'ISBN-10: 1937785491'])
+        @prueba1.isbn.should eq(['ISBN-13: 978-1937785444', 'ISBN-10: 1937785221'])
+    end
   end
+  
+  describe "Metodos" do
+      
+    it "Existe un metodo para obtener el listado de autores" do 
+         @prueba2.autores.should == (['Dave Thomas', 'Andy Hunt', 'Chad Fowler'])
+     end
+     it "Existe un metodo para obtener el titulo." do 
+         @prueba2.titulo.should == ('Programming Ruby 1.9 & 2.0: The Pragmatic Programmers Guide')
+     end
+  end
+  
 end
   
