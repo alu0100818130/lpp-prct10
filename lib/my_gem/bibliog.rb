@@ -38,4 +38,7 @@ class Bibliografia
      @isbn
     end
     
+    def formateada
+    "Autores: #@autores, Título: #@titulo, Serie: #@serie, Editorial #@editorial, #@edicion Edición, Fecha de Publicación: #@fdp y ISBN: #@isbn"
+    end
 end
