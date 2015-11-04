@@ -66,7 +66,7 @@ describe Bibliografia do
      #Pragmatic Bookshelf; 4 edition (July 7, 2013)
      #ISBN-13: 978-1937785499
      #ISBN-10: 1937785491
-         @prueba2.formateada.should == () #Expresión
+         @prueba2.to_s.should == ("Autores: [\"Dave Thomas\", \"Andy Hunt\", \"Chad Fowler\"], Título: Programming Ruby 1.9 & 2.0: The Pragmatic Programmers Guide, Serie: The Facets of Ruby, Editorial: Pragmatic Bookshelf, 4 Edición, Fecha de Publicación: July 7, 2013 y ISBN: [\"ISBN-13: 978-1937785499\", \"ISBN-10: 1937785491\"]") #Expresión
      end
   end
   
