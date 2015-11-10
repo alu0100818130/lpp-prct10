@@ -3,7 +3,7 @@ Nodo = Struct.new(:value,:next)
 class Cola
     attr_reader :principio, :fin
     
-    def initialize
+    def initialize()
         @principio = nil
         @fin = nil
     end
