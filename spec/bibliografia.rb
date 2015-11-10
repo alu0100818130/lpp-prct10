@@ -1,5 +1,6 @@
 require 'spec_helper'
 require 'my_gem/bibliog'
+require 'my_gem/libcola'
 
 describe Bibliografia do
     before :each do
@@ -71,4 +72,63 @@ describe Bibliografia do
   end
   
 end
-  
+
+  describe Lista do
+    before :all do
+        
+        #Ejemplos 
+        
+        @b1 = Bibliografia.new(['Dave Thomas','Andy Hunt','Chad Fowler'], 'Programming Ruby 1.9 & 2.0: The Pragmatic Programmers’ Guide', 'Pragmatic Bookshelf', 4, 'July 7', 2013, ['9781937785499', '1937785491'], 'The Facets of Ruby')
+        @b2 = Bibliografia.new('Scott Chacon', 'Pro Git 2009th Edition', 'Apress', 2009, 'August 27', 2009, ['9781430218333','1430218339'], 'Pro')
+        @b3 = Bibliografia.new(['David Flanagan','Yukihiro Matsumoto'], 'The Ruby Programming Language', 'O’Reilly Media', 1, 'February 4', 2008, ['0596516177','9780596516178'])
+        @b4 = Bibliografia.new(['David Chelimsky','Dave Astels','Bryan Helmkamp','Dan North','Zach Dennis','Aslak Hellesoy'], 'The RSpecBook: Behaviour Driven Development with RSpec, Cucumber, and Friends', 'Pragmatic Bookshelf', 1, 'December 25', 2010, ['1934356379','9781934356371'], 'The Facets of Ruby')
+        @b5 = Bibliografia.new('Richard E. Silverman','Git Pocket Guide', 'O’Reilly Media', 1, 'August 2', 2013, ['1449325866','9781449325862'])
+        
+        @l1 = Lista.new()
+        @l2 = Lista.new()
+        @l3 = Lista.new()
+        
+    end
+    describe "Se crea una lista" do
+        it "El nodo inicial es nulo" do
+            @l1.principio.should eq(nil)
+        end
+        it "Tambien el nodo final es nulo" do
+            @l1.fin.should eq(nil)
+        end
+    end
+    describe "Metodo para ver si la lista esta vacia" do
+        it "Debe existir este método" do
+            @l1.vacia.should eq(true)
+        end
+    end
+    describe "Metodo para insertar un elemento en la lista" do
+        it "Debe existir este método" do
+            @l2.insertar(@b1).should eq(true)
+        end
+    end
+    describe "Metodo para extraer un elemento en la lista" do
+        it "Debe existir este método" do
+            @l2.extraer.should eq(@b1)
+        end
+    end
+    describe "Insertar mas de un elemento" do
+        it "Se puede insertar mas de un elemento" do
+            @l3.insertar(@b1).should eq(true)
+            @l3.insertar(@b2).should eq(true)
+            @l3.insertar(@b3).should eq(true)
+            @l3.insertar(@b4).should eq(true)
+            @l3.insertar(@b5).should eq(true)
+        end
+    end
+    describe "Se deberia poder extraer mas de un elemento" do
+        it "Se puede extraer mas de un elemento" do
+            @l3.extraer.should eq(@b1)
+            @l3.extraer.should eq(@b2)
+            @l3.extraer.should eq(@b3)
+            @l3.extraer.should eq(@b4)
+            @l3.extraer.should eq(@b5)
+        end
+    end
+            
+end
