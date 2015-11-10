@@ -73,7 +73,7 @@ describe Bibliografia do
   
 end
 
-  describe Lista do
+  describe Cola do
     before :all do
         
         #Ejemplos 
@@ -84,50 +84,50 @@ end
         @b4 = Bibliografia.new(['David Chelimsky','Dave Astels','Bryan Helmkamp','Dan North','Zach Dennis','Aslak Hellesoy'], 'The RSpecBook: Behaviour Driven Development with RSpec, Cucumber, and Friends', 'Pragmatic Bookshelf', 1, 'December 25', 2010, ['1934356379','9781934356371'], 'The Facets of Ruby')
         @b5 = Bibliografia.new('Richard E. Silverman','Git Pocket Guide', 'O’Reilly Media', 1, 'August 2', 2013, ['1449325866','9781449325862'])
         
-        @l1 = Lista.new()
-        @l2 = Lista.new()
-        @l3 = Lista.new()
+        @c1 = Cola.new()
+        @c2 = Cola.new()
+        @c3 = Cola.new()
         
     end
-    describe "Se crea una lista" do
+    describe "Se crea una cola" do
         it "El nodo inicial es nulo" do
-            @l1.principio.should eq(nil)
+            @c1.principio.should eq(nil)
         end
         it "Tambien el nodo final es nulo" do
-            @l1.fin.should eq(nil)
+            @c1.fin.should eq(nil)
         end
     end
-    describe "Metodo para ver si la lista esta vacia" do
+    describe "Metodo para ver si la cola esta vacia" do
         it "Debe existir este método" do
-            @l1.vacia.should eq(true)
+            @c1.vacia.should eq(true)
         end
     end
-    describe "Metodo para insertar un elemento en la lista" do
+    describe "Metodo para insertar un elemento en la cola" do
         it "Debe existir este método" do
-            @l2.insertar(@b1).should eq(true)
+            @c2.insertar(@b1).should eq(true)
         end
     end
-    describe "Metodo para extraer un elemento en la lista" do
+    describe "Metodo para extraer un elemento en la cola" do
         it "Debe existir este método" do
-            @l2.extraer.should eq(@b1)
+            @c2.extraer.should eq(@b1)
         end
     end
-    describe "Insertar mas de un elemento" do
-        it "Se puede insertar mas de un elemento" do
-            @l3.insertar(@b1).should eq(true)
-            @l3.insertar(@b2).should eq(true)
-            @l3.insertar(@b3).should eq(true)
-            @l3.insertar(@b4).should eq(true)
-            @l3.insertar(@b5).should eq(true)
+    describe "Insertar mas de un elemento en la cola" do
+        it "Se puede insertar mas de un elemento en la cola" do
+            @c3.insertar(@b1).should eq(true)
+            @c3.insertar(@b2).should eq(true)
+            @c3.insertar(@b3).should eq(true)
+            @c3.insertar(@b4).should eq(true)
+            @c3.insertar(@b5).should eq(true)
         end
     end
-    describe "Se deberia poder extraer mas de un elemento" do
-        it "Se puede extraer mas de un elemento" do
-            @l3.extraer.should eq(@b1)
-            @l3.extraer.should eq(@b2)
-            @l3.extraer.should eq(@b3)
-            @l3.extraer.should eq(@b4)
-            @l3.extraer.should eq(@b5)
+    describe "Se deberia poder extraer mas de un elemento de la cola" do
+        it "Se puede extraer mas de un elemento de la cola" do
+            @c3.extraer.should eq(@b1)
+            @c3.extraer.should eq(@b2)
+            @c3.extraer.should eq(@b3)
+            @c3.extraer.should eq(@b4)
+            @c3.extraer.should eq(@b5)
         end
     end
             
