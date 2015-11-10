@@ -109,6 +109,7 @@ end
     end
     describe "Metodo para extraer un elemento en la cola" do
         it "Debe existir este método" do
+            @c2.insertar(@b1).should eq(true)
             @c2.extraer.should eq(@b1)
         end
     end
@@ -123,6 +124,13 @@ end
     end
     describe "Se deberia poder extraer mas de un elemento de la cola" do
         it "Se puede extraer mas de un elemento de la cola" do
+            
+            @c3.insertar(@b1).should eq(true)
+            @c3.insertar(@b2).should eq(true)
+            @c3.insertar(@b3).should eq(true)
+            @c3.insertar(@b4).should eq(true)
+            @c3.insertar(@b5).should eq(true)
+            
             @c3.extraer.should eq(@b1)
             @c3.extraer.should eq(@b2)
             @c3.extraer.should eq(@b3)
