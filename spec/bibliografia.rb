@@ -91,51 +91,77 @@ end
     end
     describe "Se crea una cola" do
         it "El nodo inicial es nulo" do
-            @c1.principio.should eq(nil)
+            expect(@c1.principio).to eq(nil)
+            #@c1.principio.should eq(nil)
         end
         it "Tambien el nodo final es nulo" do
-            @c1.fin.should eq(nil)
+            expect(@c1.fin).to eq(nil)
+            #@c1.fin.should eq(nil)
         end
     end
     describe "Metodo para ver si la cola esta vacia" do
         it "Debe existir este método" do
-            @c1.vacia.should eq(true)
+            expect(@c1.vacia).to eq(true)
+            #@c1.vacia.should eq(true)
         end
     end
     describe "Metodo para insertar un elemento en la cola" do
         it "Debe existir este método" do
-            @c2.insertar(@b1).should eq(true)
+            expect(@c2.insertar(@b1)).to eq(true)
+            #@c2.insertar(@b1).should eq(true)
         end
     end
     describe "Metodo para extraer un elemento en la cola" do
         it "Debe existir este método" do
-            @c2.insertar(@b1).should eq(true)
-            @c2.extraer.should eq(@b1)
+            expect(@c2.insertar(@b1)).to eq(true)
+            expect(@c2.extraer).to eq(@b1)
+            #@c2.insertar(@b1).should eq(true)
+            #@c2.extraer.should eq(@b1)
         end
     end
     describe "Insertar mas de un elemento en la cola" do
         it "Se puede insertar mas de un elemento en la cola" do
-            @c3.insertar(@b1).should eq(true)
-            @c3.insertar(@b2).should eq(true)
-            @c3.insertar(@b3).should eq(true)
-            @c3.insertar(@b4).should eq(true)
-            @c3.insertar(@b5).should eq(true)
+            
+            expect(@c3.insertar(@b1)).to eq(true)
+            expect(@c3.insertar(@b2)).to eq(true)
+            expect(@c3.insertar(@b3)).to eq(true)
+            expect(@c3.insertar(@b4)).to eq(true)
+            expect(@c3.insertar(@b5)).to eq(true)
+            
+            #@c3.insertar(@b1).should eq(true)
+            #@c3.insertar(@b2).should eq(true)
+            #@c3.insertar(@b3).should eq(true)
+            #@c3.insertar(@b4).should eq(true)
+            #@c3.insertar(@b5).should eq(true)
         end
     end
     describe "Se deberia poder extraer mas de un elemento de la cola" do
         it "Se puede extraer mas de un elemento de la cola" do
             
-            @c3.insertar(@b1).should eq(true)
-            @c3.insertar(@b2).should eq(true)
-            @c3.insertar(@b3).should eq(true)
-            @c3.insertar(@b4).should eq(true)
-            @c3.insertar(@b5).should eq(true)
+            expect(@c3.insertar(@b1)).to eq(true)
+            expect(@c3.insertar(@b2)).to eq(true)
+            expect(@c3.insertar(@b3)).to eq(true)
+            expect(@c3.insertar(@b4)).to eq(true)
+            expect(@c3.insertar(@b5)).to eq(true)
             
-            @c3.extraer.should eq(@b1)
-            @c3.extraer.should eq(@b2)
-            @c3.extraer.should eq(@b3)
-            @c3.extraer.should eq(@b4)
-            @c3.extraer.should eq(@b5)
+            expect(@c3.extraer).to eq(@b1)
+            expect(@c3.extraer).to eq(@b2)
+            expect(@c3.extraer).to eq(@b3)
+            expect(@c3.extraer).to eq(@b4)
+            expect(@c3.extraer).to eq(@b5)
+            
+            #@c3.insertar(@b1).should eq(true)
+            #@c3.insertar(@b2).should eq(true)
+            #c3.insertar(@b3).should eq(true)
+            #@c3.insertar(@b4).should eq(true)
+            #@c3.insertar(@b5).should eq(true)
+            
+            #@c3.extraer.should eq(@b1)
+            #@c3.extraer.should eq(@b2)
+            #@c3.extraer.should eq(@b3)
+            #@c3.extraer.should eq(@b4)
+            #@c3.extraer.should eq(@b5)
+
         end
     end
             
