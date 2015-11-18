@@ -204,14 +204,14 @@ describe Libro do
     
     describe "Comprobar si responde a un metodo propio" do
         it "Deberia responder a un metodo propio" do
-            @l1.respond_to?(:isbnl).should eq(true)
+            @l1.respond_to?(:isbn1).should eq(true)
         end
     end
 end
 
 describe Revista do
     before :all do
-        @r1 = Revista.new('Felipe', 'Decoracion de hogar', 'Hogares', 5, 'January 1 2015', 9857425)
+        @r1 = Revista.new('Carmen Rosa', 'Interiorismo', 'Hogar', 2, 'July 4 2007', 3355461)
     end
     
     describe "Comprobar la instancia" do
@@ -253,7 +253,7 @@ end
 
 describe Periodico do
     before :all do
-        @p1 = Periodico.new('Maria', 'Diario de avisos', 'Noticias', 1, 'February 10 2013', 15)
+        @p1 = Periodico.new('Jose Francisco', 'El Dia', 'Sucesos', 4, 'January 4 2005', 10)
     end
     
     describe "Comprobar la instancia del objeto" do
@@ -295,7 +295,7 @@ end
 
 describe Electronico do
     before :all do
-        @e1 = Electronico.new('Alexis', 'Programa en Java', 'Programming', 3, 'November 17 2015', 'www.urldelbook.com')
+        @e1 = Electronico.new('Jose David', 'Uso de Ruby', 'Programming on Ruby', 7, 'October 5 2013', 'www.programmingonruby.com')
     end
     
     describe "Comprobar la instancia del objeto" do
