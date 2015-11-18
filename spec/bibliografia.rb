@@ -250,3 +250,87 @@ describe Revista do
         end
     end
 end
+
+describe Periodico do
+    before :all do
+        @p1 = Periodico.new('Maria', 'Diario de avisos', 'Noticias', 1, 'February 10 2013', 15)
+    end
+    
+    describe "Comprobar la instancia del objeto" do
+        it "Deberia ser una instancia de Periodico" do
+           (@p1.instance_of?Periodico).should eq(true)
+        end
+    end
+    
+    describe "Comprobar la jerarquia de clases del objeto" do
+        it "Deberia pertenecer a la jerarquia de clase de Bibliografia" do
+            (@p1.is_a?Bibliografia).should eq(true)
+        end
+        it "Deberia pertenecer a la jerarquia de clase de Object" do
+            (@p1.is_a?Object).should eq(true)
+        end
+        it "Deberia pertenece`r a la jerarquia de clase de BasicObject" do
+            (@p1.is_a?BasicObject).should eq(true)
+        end
+    end
+    
+    describe "Comprobar la instancia del objeto con su madre" do
+        it "No deberia ser una instancia de Bibliografia" do
+            (@p1.instance_of?Bibliografia).should eq(false)
+        end
+    end
+    
+    describe "Comprobar si responde a un metodo de su madre" do
+        it "Deberia responder a un metodo de su madre" do
+            @p1.respond_to?(:autores).should eq(true)
+        end
+    end
+    
+    describe "Comprobar si responde a un metodo propio" do
+        it "Deberia responder a un metodo propio" do
+            @p1.respond_to?(:columnas).should eq(true)
+        end
+    end
+end
+
+describe Electronico do
+    before :all do
+        @e1 = Electronico.new('Alexis', 'Programa en Java', 'Programming', 3, 'November 17 2015', 'www.urldelbook.com')
+    end
+    
+    describe "Comprobar la instancia del objeto" do
+        it "Deberia ser una instancia de Electronico" do
+           (@e1.instance_of?Electronico).should eq(true)
+        end
+    end
+    
+    describe "Comprobar la jerarquia de clases del objeto" do
+        it "Deberia pertenecer a la jerarquia de clase de Bibliografia" do
+            (@e1.is_a?Bibliografia).should eq(true)
+        end
+        it "Deberia pertenecer a la jerarquia de clase de Object" do
+            (@e1.is_a?Object).should eq(true)
+        end
+        it "Deberia pertenece a la jerarquia de clase de BasicObject" do
+            (@e1.is_a?BasicObject).should eq(true)
+        end
+    end
+    
+    describe "Comprobar la instancia del objeto con su madre" do
+        it "No deberia ser una instancia de Bibliografia" do
+            (@e1.instance_of?Bibliografia).should eq(false)
+        end
+    end
+    
+    describe "Comprobar si responde a un metodo de su madre" do
+        it "Deberia responder a un metodo de su madre" do
+            @e1.respond_to?(:autores).should eq(true)
+        end
+    end
+    
+    describe "Comprobar si responde a un metodo propio" do
+        it "Deberia responder a un metodo propio" do
+            @e1.respond_to?(:url).should eq(true)
+        end
+    end
+end
