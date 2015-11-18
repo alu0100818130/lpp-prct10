@@ -334,3 +334,5 @@ describe Electronico do
         end
     end
 end
+
+#Se ha añadido el guard (herramienta de comprobación continua)
