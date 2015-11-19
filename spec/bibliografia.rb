@@ -206,6 +206,7 @@ describe Libro do
         it "Deberia responder a un metodo propio" do
             @l1.respond_to?(:isbn1).should eq(true)
         end
+        
     end
 end
 
@@ -269,9 +270,13 @@ describe Periodico do
         it "Deberia pertenecer a la jerarquia de clase de Object" do
             (@p1.is_a?Object).should eq(true)
         end
-        it "Deberia pertenece`r a la jerarquia de clase de BasicObject" do
+        it "Deberia pertenecer a la jerarquia de clase de BasicObject" do
             (@p1.is_a?BasicObject).should eq(true)
         end
+        it "Una revista es una instancia de Bibliografia" do
+            expect(@p1.is_a?Bibliografia).to eq(true)    
+        end
+        
     end
     
     describe "Comprobar la instancia del objeto con su madre" do

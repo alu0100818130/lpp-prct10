@@ -1,4 +1,4 @@
-Nodo = Struct.new(:value,:next)
+Nodo = Struct.new(:value,:next, :prev)
 
 class Cola
     attr_reader :principio, :fin
@@ -42,5 +42,32 @@ class Cola
             return valor
         end
     end
-        
+    
+    def insertar_principio (elemento)
+        nodo = Nodo.new(elemento,nil,nil)
+        if(vacia == true)
+            @fin = nodo
+            @principio = nodo
+        else
+            nodo.next = @principio
+            @principio.prev = nodo
+            @principio = nodo
+        end
+        true
+    end
+    
+    def extraer_fin
+        if(vacia == true)
+            return false
+        else
+            valor = @fin.value
+            @fin = @fin.prev
+            if(@fin == nil)
+                @principio = nil
+            else
+                @fin.next = nil
+            end
+            return valor
+        end
+    end   
 end
