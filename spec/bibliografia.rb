@@ -341,3 +341,28 @@ describe Electronico do
 end
 
 #Se ha añadido el guard (herramienta de comprobación continua)
+
+
+describe "Comparable" do
+    before :each do
+       @b1 = Bibliografia.new(['Dave Thomas','Andy Hunt','Chad Fowler'], 'Programming Ruby 1.9 & 2.0: The Pragmatic Programmers’ Guide', 'Pragmatic Bookshelf', 4, 'July 7 2013', ['9781937785499', '1937785491'], 'The Facets of Ruby')
+       @b2 = Bibliografia.new(['Dave Thomas','Andy Hunt','Chad Fowler'], 'Programming Ruby 1.9 & 2.0: The Pragmatic Programmers’ Guide', 'Pragmatic Bookshelf', 50, 'July 7 2013', ['9781937785499', '1937785491'], 'The Facets of Ruby')
+    end
+    it "Menor" do
+      expect(@b1 < @b2).to eq(true)
+    end
+    it "Menor o igual" do
+      expect(@b1 <= @b2).to eq(true)
+    end
+    it "Mayor" do
+      expect(@b2 > @b1).to eq(true)
+    end
+    it "Mayor o igual)" do
+      expect(@b2 >= @b1).to eq(true)
+    end
+
+    it "Igual" do
+      expect(@b1 == @b2).to eq(false)
+    end
+ 
+  end 

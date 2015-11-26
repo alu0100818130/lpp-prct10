@@ -1,12 +1,21 @@
 Nodo = Struct.new(:value,:next, :prev)
 
 class Cola
+    include Enumerable
     attr_reader :principio, :fin
     
     def initialize()
         @principio = nil
         @fin = nil
     end
+    
+        def each
+               aux = @principio
+               while aux != nil
+		            yield aux.value
+		            aux = aux.next
+               end
+        end	
     
     def vacia
         if (@principio == nil)
