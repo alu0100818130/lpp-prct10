@@ -15,7 +15,7 @@ class Cola
 		            yield aux.value
 		            aux = aux.next
                end
-        end	
+            end	
     
     def vacia
         if (@principio == nil)

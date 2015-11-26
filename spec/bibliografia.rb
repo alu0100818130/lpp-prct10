@@ -366,3 +366,40 @@ describe "Comparable" do
     end
  
   end 
+  
+   describe "Enumerable" do
+    before :each do
+         @c1 = Cola.new
+         @c1.insertar(50)
+         @c1.insertar(40)
+         @c1.insertar(10)
+    end
+        it "Comprobrando el metodo all?" do
+      		expect(@c1.all?).to eq(true)
+    	    end 
+	    it "Comprobrando el metodo any?" do
+	        expect(@c1.any?).to eq(true)
+	    end 
+	    it "Comprobrando el metodo collect" do
+	        expect(@c1.map{|i| i*i}).to eq([2500,1600,100])
+	    end 
+	    it "Comprobrando el metodo count" do
+	        expect(@c1.count).to eq(3)
+    	end
+	    it "Comprobrando el metodo detect" do
+	        expect(@c1.detect {|i| i == 50}).to eq(50)
+	        expect(@c1.find {|i| i == 40}).to eq(40)
+	    end
+	    it "Comprobrando drop" do
+	        expect(@c1.drop(1)).to eq([40,10])
+	    end
+	    it "Comprobrando max" do
+	        expect(@c1.max).to eq(50)
+	    end
+    	it "Comprobrando min" do
+	        expect(@c1.min).to eq(10)
+    	end
+	    it "Comprobrando sort" do
+	        expect(@c1.sort).to eq([10,40,50])
+	    end
+  end
