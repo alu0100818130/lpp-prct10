@@ -370,9 +370,12 @@ describe "Comparable" do
    describe "Enumerable" do
     before :each do
          @c1 = Cola.new
-         @c1.insertar(50)
-         @c1.insertar(40)
-         @c1.insertar(10)
+         @b1 = Bibliografia.new(['Dave Thomas','Andy Hunt','Chad Fowler'], 'Programming Ruby 1.9 & 2.0: The Pragmatic Programmers’ Guide', 'Pragmatic Bookshelf', 50, 'July 7 2013', ['9781937785499', '1937785491'], 'The Facets of Ruby')
+         @b2 = Bibliografia.new(['Dave Thomas','Andy Hunt','Chad Fowler'], 'Programming Ruby 1.9 & 2.0: The Pragmatic Programmers’ Guide', 'Pragmatic Bookshelf', 40, 'July 7 2013', ['9781937785499', '1937785491'], 'The Facets of Ruby')
+         @b3 = Bibliografia.new(['Dave Thomas','Andy Hunt','Chad Fowler'], 'Programming Ruby 1.9 & 2.0: The Pragmatic Programmers’ Guide', 'Pragmatic Bookshelf', 10, 'July 7 2013', ['9781937785499', '1937785491'], 'The Facets of Ruby')
+         @c1.insertar(@b1)
+         @c1.insertar(@b2)
+         @c1.insertar(@b3)
     end
         it "Comprobrando el metodo all?" do
       		expect(@c1.all?).to eq(true)
@@ -380,26 +383,20 @@ describe "Comparable" do
 	    it "Comprobrando el metodo any?" do
 	        expect(@c1.any?).to eq(true)
 	    end 
-	    it "Comprobrando el metodo collect" do
-	        expect(@c1.map{|i| i*i}).to eq([2500,1600,100])
-	    end 
 	    it "Comprobrando el metodo count" do
 	        expect(@c1.count).to eq(3)
     	end
 	    it "Comprobrando el metodo detect" do
-	        expect(@c1.detect {|i| i == 50}).to eq(50)
-	        expect(@c1.find {|i| i == 40}).to eq(40)
-	    end
-	    it "Comprobrando drop" do
-	        expect(@c1.drop(1)).to eq([40,10])
+	        expect(@c1.detect {|i| i == @b1}).to eq(@b1)
+	        expect(@c1.find {|i| i == @b2}).to eq(@b2)
 	    end
 	    it "Comprobrando max" do
-	        expect(@c1.max).to eq(50)
+	        expect(@c1.max).to eq(@b1)
 	    end
     	it "Comprobrando min" do
-	        expect(@c1.min).to eq(10)
+	        expect(@c1.min).to eq(@b3)
     	end
 	    it "Comprobrando sort" do
-	        expect(@c1.sort).to eq([10,40,50])
+	        expect(@c1.sort).to eq([@b3,@b2,@b1])
 	    end
   end
