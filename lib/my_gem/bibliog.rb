@@ -1,22 +1,37 @@
 class Bibliografia
     include Comparable
-    attr_reader :autores, :titulo,:serie, :editorial, :edicion, :fdp, :isbn, :x, :y
-    def initialize(a,b,d,e,f,g,c='0')
+    attr_reader :autores, :apel, :titulo, :serie, :editorial, :edicion, :fdp, :isbn, :x, :y
+    def initialize(a,ap,b,d,e,f,g,c='0')
        @autores= a
+       @apel= ap
        @titulo=b
        @editorial=d
         @edicion=e
         @fdp=f
         @isbn=g
-         @serie=c
+        @serie=c
     end
     
     def <=> (other)
-        @edicion <=> other.edicion
+        if (@apel == other.apel)
+            if (@fdp == other.fdp)
+                @titulo <=> other.titulo
+            else
+                @fdp <=> other.fdp
+            end
+        else
+            @apel <=> other.apel
+        end
     end
     
     def obtenerautores
-     @autores
+     size = @autores.length
+        i = 0
+        while i < (size-1)
+            mensaje = "#{mensaje}"+"#{@autores[i]} #{@apel[i]}, "
+            i = i+1
+        end
+            mensaje = "#{mensaje}"+"#{@autores[i]} #{@apel[i]}"
     end
     
     def obtenertitulo
@@ -52,8 +67,8 @@ end
 class Libro < Bibliografia
     attr_reader :isbn1
     
-    def initialize (a,b,d,e,f,g,c='0')
-        super(a,b,d,e,f,g,c)
+    def initialize (a,ap,b,d,e,f,g,c='0')
+        super(a,ap,b,d,e,f,g,c)
         @isbn1=g
     end
     
@@ -62,8 +77,8 @@ end
 class Revista < Bibliografia
     attr_reader :issn
     
-    def initialize (a,b,d,e,f,g,c='0')
-        super(a,b,d,e,f,"none",c)
+    def initialize (a,ap,b,d,e,f,g,c='0')
+        super(a,ap,b,d,e,f,"none",c)
         @issn=g
     end
 end
@@ -71,8 +86,8 @@ end
 class Periodico < Bibliografia
     attr_reader :columnas
     
-    def initialize (a,b,d,e,f,g,c='0')
-        super(a,b,d,e,f,"none",c)
+    def initialize (a,ap,b,d,e,f,g,c='0')
+        super(a,ap,b,d,e,f,"none",c)
         @columnas=columnas
     end
 end
@@ -80,8 +95,8 @@ end
 class Electronico < Bibliografia
     attr_reader :url
     
-    def initialize (a,b,d,e,f,g,c='0')
-        super(a,b,d,e,f,"none",c='0')
+    def initialize (a,ap,b,d,e,f,g,c='0')
+        super(a,ap,b,d,e,f,"none",c='0')
         @url=g
     end
 end
