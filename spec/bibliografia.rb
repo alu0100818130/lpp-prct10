@@ -12,16 +12,19 @@ require 'my_gem/libcola'
         @r1 = Revista.new(['Paco'],['Fernandez'], 'hola', 'Intento', 1, 'January 18 2013', '1245638970')
         @p1 = Periodico.new(['Juan'], ['Diaz'],'Sucesos', 'El Pais', 1, 'December 5 2015', 15)
         @e1 = Electronico.new(['Pedro'],['Picapiedra'],'Electric1', 'XXXXXXXXX', 3, 'November 17 2015', 'www.electric1.com')
-        @lb1 = Lista_Bibliog_Ant.new(@l1)
+        #Lista_Bibliog_Ant son CITAS
+        @lb1 = Lista_Bibliog_Ant.new(@l1) 
         @lb2 = Lista_Bibliog_Ant.new(@l2)
         @lb3 = Lista_Bibliog_Ant.new(@r1)
         @lb4 = Lista_Bibliog_Ant.new(@p1)
         @lb5 = Lista_Bibliog_Ant.new(@e1)
+        #Class de ordenación de CITAS
         @conjuntobibliog = Cola_ordenacion.new()
     end
     
     describe "#almacenamiento " do
         it "Comprobacion" do
+            #ANTBIB ES LA VARIABLE DONDE SE ALMACENA LA BIBLIOGRAFIA DE LA CITA
             expect(@lb1.antbib).to eq(@l1)
         end
     end

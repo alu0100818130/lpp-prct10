@@ -81,13 +81,14 @@ class Cola
     end   
 end
 
-
+#Lista_Bibliog_Ant son CITAS
 class Lista_Bibliog_Ant
     
     include Comparable
     attr_reader :antbib
     
     def initialize (b)
+        #ANTBIB ES LA VARIABLE DONDE SE ALMACENA LA BIBLIOGRAFIA DE LA CITA
        @antbib=b 
     end
 
@@ -145,7 +146,7 @@ class Lista_Bibliog_Ant
     end
     
 end
-
+#Class de ordenación de CITAS
 class Cola_ordenacion
     attr_accessor :c1, :ordenacion
      
