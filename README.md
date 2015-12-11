@@ -37,3 +37,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
 5. Create a new Pull Request
+
+
+{<img src="https://coveralls.io/repos/alu0100818130/lpp-prct10/badge.svg?branch=master&service=github" alt="Coverage Status" />}[https://coveralls.io/github/alu0100818130/lpp-prct10?branch=master]
+
